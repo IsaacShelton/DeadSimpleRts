@@ -1,5 +1,7 @@
-# DeadSimpleRts
-A quick-n-dirty RTS prototype of a game idea I had without base building or multiple of the same unit
+# DeadSimpleRtsPrototype
+A quick-n-dirty RTS prototype of a game idea I had without base building or multiple of the same unit.
+
+This idea could be expanded into a true RTS in the future. It kind of stretches the definition right now.
 
 ### How to Play
 - Kill the enemies before they attack your houses.
@@ -16,3 +18,8 @@ A quick-n-dirty RTS prototype of a game idea I had without base building or mult
 - You lose if three enemies reach any of your houses.
 - It gets more difficult over time >:)
 
+### Screenshots
+
+![](https://github.com/IsaacShelton/DeadSimpleRts/blob/master/screenshots/ss1.png)
+
+![](https://github.com/IsaacShelton/DeadSimpleRts/blob/master/screenshots/ss2.png)
