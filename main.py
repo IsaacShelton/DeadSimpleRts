@@ -5,21 +5,13 @@ import pygame
 import math
 import random
 
-# Initialize Pygame
 pygame.init()
 pygame.mixer.init()
 
-# Get the current display resolution
 info = pygame.display.Info()
 screen_width, screen_height = info.current_w, info.current_h
-# screen_width = 1200
-# screen_height = 800
 
-# Create a borderless window that fills the entire screen
-# screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
-
-# Set a caption (optional; won't be visible without borders)
 pygame.display.set_caption("Borderless Fullscreen Window")
 
 enemy_sound = pygame.mixer.Sound("enemy.wav")
@@ -182,20 +174,20 @@ while running:
             if i <= j:
                 continue
 
-            m1 = enemies[i]
-            m2 = enemies[j]
-            dist = math.dist((m1.x, m1.y), (m2.x, m2.y))
+            e1 = enemies[i]
+            e2 = enemies[j]
+            dist = math.dist((e1.x, e1.y), (e2.x, e2.y))
 
-            if dist < m1.r + m2.r:
-                dy = m2.y - m2.y
-                dx = m1.x - m2.x
+            if dist < e1.r + e2.r:
+                dy = e2.y - e2.y
+                dx = e1.x - e2.x
                 direction = math.atan2(dy, dx) + math.pi / 4
-                over = (-dist + m1.r + m2.r) / (m1.r + m2.r)
+                over = (-dist + e1.r + e2.r) / (e1.r + e2.r)
                 force = 20 * over
-                m1.x += force * math.cos(direction)
-                m2.y += force * math.sin(direction)
-                m2.x -= force * math.cos(direction)
-                m2.y -= force * math.sin(direction)
+                e1.x += force * math.cos(direction)
+                e2.y += force * math.sin(direction)
+                e2.x -= force * math.cos(direction)
+                e2.y -= force * math.sin(direction)
 
     if not gameover:
         level = score // 10
